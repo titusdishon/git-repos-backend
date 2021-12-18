@@ -4,11 +4,11 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import compression from "compression";
+import { testApp } from "./app.js";
 
 dotenv.config();
 const app = express();
-import { testApp } from "./app.js";
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(helmet());
 app.use(compression({ filter: shouldCompress }));
